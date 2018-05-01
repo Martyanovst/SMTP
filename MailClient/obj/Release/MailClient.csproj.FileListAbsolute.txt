@@ -1,0 +1,7 @@
+C:\Users\marty\source\repos\MailClient\MailClient\bin\Release\MailClient.exe.config
+C:\Users\marty\source\repos\MailClient\MailClient\bin\Release\MailClient.exe
+C:\Users\marty\source\repos\MailClient\MailClient\bin\Release\MailClient.pdb
+C:\Users\marty\source\repos\MailClient\MailClient\obj\Release\MailClient.csproj.CoreCompileInputs.cache
+C:\Users\marty\source\repos\MailClient\MailClient\obj\Release\MailClient.exe
+C:\Users\marty\source\repos\MailClient\MailClient\obj\Release\MailClient.pdb
+C:\Users\marty\source\repos\MailClient\MailClient\obj\Release\MailClient.csprojResolveAssemblyReference.cache
