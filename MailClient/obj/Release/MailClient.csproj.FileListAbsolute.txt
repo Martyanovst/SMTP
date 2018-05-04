@@ -5,3 +5,9 @@ C:\Users\marty\source\repos\MailClient\MailClient\obj\Release\MailClient.csproj.
 C:\Users\marty\source\repos\MailClient\MailClient\obj\Release\MailClient.exe
 C:\Users\marty\source\repos\MailClient\MailClient\obj\Release\MailClient.pdb
 C:\Users\marty\source\repos\MailClient\MailClient\obj\Release\MailClient.csprojResolveAssemblyReference.cache
+C:\Users\Comp\Desktop\Игры\С#\SMTP\SMTP\MailClient\bin\Release\MailClient.exe.config
+C:\Users\Comp\Desktop\Игры\С#\SMTP\SMTP\MailClient\bin\Release\MailClient.exe
+C:\Users\Comp\Desktop\Игры\С#\SMTP\SMTP\MailClient\bin\Release\MailClient.pdb
+C:\Users\Comp\Desktop\Игры\С#\SMTP\SMTP\MailClient\obj\Release\MailClient.csprojResolveAssemblyReference.cache
+C:\Users\Comp\Desktop\Игры\С#\SMTP\SMTP\MailClient\obj\Release\MailClient.exe
+C:\Users\Comp\Desktop\Игры\С#\SMTP\SMTP\MailClient\obj\Release\MailClient.pdb

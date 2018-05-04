@@ -17,7 +17,7 @@ namespace MailClient
         private const string configFileName = "config.txt";
         private const string textFileName = "text.txt";
         private static readonly Regex receiverPattern = new Regex("receivers: ((\".+?\" ?)+)", RegexOptions.Compiled);
-        private static readonly Regex filesPattern = new Regex("files: ((\".+?\" ?)*)", RegexOptions.Compiled);
+        private static readonly Regex filesPattern = new Regex("files: ((\".+?\" ?)+)", RegexOptions.Compiled);
         private static readonly Regex subjectPattern = new Regex("subject: ((\".+?\")+)", RegexOptions.Compiled);
 
         static void Main(string[] args)
@@ -26,7 +26,7 @@ namespace MailClient
             var account = Console.ReadLine();
 
             Console.WriteLine("Enter your password:");
-           var password = Console.ReadLine();
+            var password = Console.ReadLine();
 
             using (var sslStream = new SslStream(new TcpClient("smtp.mail.ru", 465).GetStream(), false,
                 ValidateServerCertificate, null))
@@ -81,10 +81,10 @@ namespace MailClient
             var receivers = receiverPattern.Parse(data[1])
                 .Split(' ')
                 .Select(inQuotes => inQuotes.Substring(1, inQuotes.Length - 2));
-
-            var files = filesPattern.Parse(data[2])
-                .Split(' ')
-                .Select(inQuotes => new FileInfo(Path.Combine(path, inQuotes.Substring(1, inQuotes.Length - 2))));
+            var files = filesPattern.IsMatch(data[2]) ? filesPattern.Parse(data[2])
+               .Split(' ')
+               .Select(inQuotes => new FileInfo(Path.Combine(path, inQuotes.Substring(1, inQuotes.Length - 2))))
+               : null;
 
             var text = File.ReadAllText(textFile, encoding);
             return new MessageInfo(account, password, receivers, subject, text, files);
@@ -130,6 +130,7 @@ namespace MailClient
         private static IEnumerable<string> ConvertFiles(IEnumerable<FileInfo> files)
         {
             var builder = new StringBuilder();
+            if (files == null) yield break;
             foreach (var file in files)
             {
                 builder.Append($"Content-Type: {GetContentType(file)}\n");
